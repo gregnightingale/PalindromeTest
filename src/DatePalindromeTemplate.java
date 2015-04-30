@@ -3,7 +3,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-abstract public class DatePalindromeTemplate implements Strategy {
+abstract public class DatePalindromeTemplate {
 
 	private SimpleDateFormat dateFormat;
 	private String start, end;

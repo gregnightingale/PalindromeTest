@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat;
  *         to iterate through each day of that year.
  */
 public class PalindromeSearchImpl_MMddyyyy extends
-		DatePalindromeSearchTemplateMethod {
+		DatePalindromeTemplate implements Strategy {
 
 	public PalindromeSearchImpl_MMddyyyy(String dateFormat, String startDate,
 			String endDate) throws ParseException {
@@ -16,14 +16,7 @@ public class PalindromeSearchImpl_MMddyyyy extends
 	}
 
 	@Override
-	protected void preProcess() {
-		System.out.println("preProcess()");
-	}
-
-	@Override
-	protected boolean search() {
-		System.out.println("search()");
-
+	public void solve() {
 		int startYear, endYear;
 		startYear = Integer.parseInt(Utils.getYear(getStartDate()));
 		endYear = Integer.parseInt(Utils.getYear(getEndDate()));
@@ -40,8 +33,6 @@ public class PalindromeSearchImpl_MMddyyyy extends
 				}
 			}
 		}
-
-		return true;
 	}
 
 	private boolean isValidDate(String possibleDate) {
@@ -64,12 +55,6 @@ public class PalindromeSearchImpl_MMddyyyy extends
 			return true;
 		}
 		return false;
-	}
-
-	@Override
-	protected void postProcess() {
-		System.out.println("postProcess()");
-		// TODO Auto-generated method stub
 	}
 
 	private boolean isPossiblyValidDay(String palDay) {
